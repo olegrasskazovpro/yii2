@@ -12,6 +12,7 @@ class ContactForm extends Model
 {
     public $name;
     public $email;
+    public $phone;
     public $subject;
     public $body;
     public $verifyCode;
@@ -22,8 +23,9 @@ class ContactForm extends Model
     public function rules()
     {
         return [
-            [['name', 'email', 'subject', 'body'], 'required', 'message' => 'Заполните обязательное поле'],
+            [['name', 'email', 'subject', 'body', 'phone'], 'required', 'message' => 'Заполните обязательное поле'],
             ['email', 'email', 'message' => 'Тут должен быть действительный email'],
+						['phone', 'string', 'min' => 10, 'message' => 'Минимум 10 цифр'],
             ['verifyCode', 'captcha', 'message' => 'Нужно указать капчу'],
         ];
     }
