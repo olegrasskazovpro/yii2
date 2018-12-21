@@ -2,7 +2,6 @@
 
 namespace app\models;
 
-use app\validators\EmailValidator;
 use Yii;
 use yii\base\Model;
 
@@ -25,7 +24,6 @@ class ContactForm extends Model
         return [
             [['name', 'email', 'subject', 'body'], 'required', 'message' => 'Заполните обязательное поле'],
             ['email', 'email', 'message' => 'Тут должен быть действительный email'],
-						['email', EmailValidator::className()],
             ['verifyCode', 'captcha', 'message' => 'Нужно указать капчу'],
         ];
     }

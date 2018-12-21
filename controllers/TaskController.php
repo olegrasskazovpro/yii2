@@ -9,22 +9,27 @@
 namespace app\controllers;
 
 
-use app\models\ContactForm;
+use app\models\Task;
 use yii\web\Controller;
 
 class TaskController extends Controller
 {
 	public function actionIndex ()
 	{
-		$model = new ContactForm();
-		$model->email = 'ff@d.ru';
+		$task = new Task();
+		$task->title = 'New task oooo';
+		$task->id = 2;
+		$task->description = 'Here is desc';
+		$task->responsibleId = 1;
+		$task->createDate = date('Y-m-d');
 
-		var_dump($model->validate());
-		var_dump($model->getErrors());
+		$task->validate();
 
-		return $this->renderPartial('index', [
-			'title' => 'Yii2 заголовок',
-			'content' => 'Какой-то контент',
+		var_dump($task);exit;
+
+		return $this->render('index', [
+			'title' => 'Это Таск-Трекер',
+			'content' => 'Привет, пользователь',
 		]);
 	}
 }
