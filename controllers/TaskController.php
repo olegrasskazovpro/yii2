@@ -11,7 +11,7 @@ class TaskController extends Controller
 	{
 		return $this->render('index', [
 			'title' => 'Это Таск-Трекер',
-			'content' => 'Привет, пользователь',
+			'content' => 'Привет, пользователь. Добавим задачку???',
 		]);
 	}
 }

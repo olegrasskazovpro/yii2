@@ -5,7 +5,7 @@ namespace app\models;
 class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
 {
     public $id;
-    public $username;
+    public $login;
     public $password;
     public $authKey;
     public $accessToken;
@@ -53,16 +53,24 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
     /**
      * Finds user by username
      *
-     * @param string $username
+     * @param string $username - username from login form
      * @return static|null
      */
     public static function findByUsername($username)
     {
-        foreach (self::$users as $user) {
+
+    	/*foreach (self::$users as $user) {
             if (strcasecmp($user['username'], $username) === 0) {
                 return new static($user);
             }
-        }
+        }*/
+
+    	$user = \Yii::$app->db->createCommand("SELECT id, login, password FROM tasks.users WHERE login = :login")
+			->bindValue(":login", $username)->queryOne();
+
+				if (strcasecmp($user['login'], $username) === 0) {
+					return new static($user);
+				}
 
         return null;
     }

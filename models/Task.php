@@ -11,13 +11,14 @@ class Task extends Model
 	public $title;
 	public $description;
 	public $responsibleId;
-	public $createDate;
-	public $updateDate;
+	public $deadline;
+	public $created;
+	public $updated;
 	public $status;
-	public $comments = [];
 
 	/**
 	 * @return array the validation rules.
+	 *
 	 */
 	public function rules()
 	{
