@@ -44,7 +44,16 @@ class Users extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
+    public function fields()
+		{
+			return [
+				'id',
+				'username' => 'login',
+				'password',
+			];
+		}
+
+	/**
      * @return \yii\db\ActiveQuery
      */
     public function getTasks()
