@@ -3,15 +3,14 @@
 namespace app\controllers;
 
 
+use app\models\tables\Tasks;
 use yii\web\Controller;
 
 class TaskController extends Controller
 {
 	public function actionIndex ()
 	{
-		return $this->render('index', [
-			'title' => 'Это Таск-Трекер',
-			'content' => 'Привет, пользователь. Добавим задачку???',
-		]);
+		$model = new Tasks();
+		return $this->render('index', ['model' => $model	]);
 	}
 }

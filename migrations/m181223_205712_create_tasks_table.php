@@ -18,7 +18,7 @@ class m181223_205712_create_tasks_table extends Migration
 				'description' => $this->text(),
 				'responsible_id' => $this->integer()->notNull(),
 				'deadline' => $this->dateTime(),
-				'created' => $this->dateTime()->notNull(),
+				'created' => $this->dateTime(),
 				'updated' => $this->dateTime(),
 				'status' => $this->integer()->notNull()->defaultValue(1),
 			]);

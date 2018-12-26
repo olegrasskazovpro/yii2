@@ -2,15 +2,17 @@
 
 namespace app\models\tables;
 
-use Yii;
-
 /**
  * This is the model class for table "users".
  *
  * @property int $id
  * @property string $name
+ * @property string $login
+ * @property string $password
+ * @property string $role_id
  *
  * @property Tasks[] $tasks
+ * @property Roles[] $roles
  */
 class Users extends \yii\db\ActiveRecord
 {
@@ -28,8 +30,9 @@ class Users extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'required'],
-            [['name'], 'string', 'max' => 25],
+            [['name', 'login', 'password', 'role_id'], 'required'],
+            [['name', 'login', 'password'], 'string', 'max' => 25],
+            [['role_id'], 'integer'],
         ];
     }
 
@@ -39,8 +42,11 @@ class Users extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
+					'id' => 'ID',
+					'name' => 'Name',
+					'login' => 'Login',
+					'password' => 'Password',
+					'role_id' => 'Role ID',
         ];
     }
 
@@ -50,6 +56,7 @@ class Users extends \yii\db\ActiveRecord
 				'id',
 				'username' => 'login',
 				'password',
+				'role_id',
 			];
 		}
 
@@ -60,4 +67,12 @@ class Users extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Tasks::class, ['responsible_id' => 'id']);
     }
+
+	/**
+	 * @return \yii\db\ActiveQuery
+	 */
+	public function getRoles()
+	{
+		return $this->hasMany(Roles::class, ['role_id' => 'id']);
+	}
 }

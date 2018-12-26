@@ -17,8 +17,6 @@ use Yii;
  * @property int $status
  *
  * @property Users $responsible
- * @property TasksStatus $status0
- * @property User $user
  */
 class Tasks extends \yii\db\ActiveRecord
 {
@@ -41,13 +39,14 @@ class Tasks extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'responsible_id', 'created'], 'required'],
-            [['description'], 'string'],
-            [['responsible_id', 'status'], 'integer'],
-            [['deadline', 'created', 'updated'], 'safe'],
-            [['title'], 'string', 'max' => 80],
-            [['responsible_id'], 'exist', 'skipOnError' => true, 'targetClass' => Users::class, 'targetAttribute' => ['responsible_id' => 'id']],
-            [['status'], 'exist', 'skipOnError' => true, 'targetClass' => TaskStatus::class, 'targetAttribute' => ['status' => 'id']],
+					[['title', 'responsible_id'], 'required'],
+					[['description'], 'string'],
+					[['responsible_id', 'status'], 'integer'],
+					[['deadline', 'created', 'updated'], 'datetime'],
+					['updated', 'default', 'value' => date('Y-m-d H:i:s')],
+					[['title'], 'string', 'max' => 80],
+					[['responsible_id'], 'exist', 'skipOnError' => true, 'targetClass' => Users::class, 'targetAttribute' => ['responsible_id' => 'id']],
+					[['status'], 'exist', 'skipOnError' => true, 'targetClass' => TaskStatus::class, 'targetAttribute' => ['status' => 'id']],
         ];
     }
 
@@ -58,13 +57,13 @@ class Tasks extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Title',
-            'description' => 'Description',
-            'responsible_id' => 'Responsible ID',
-            'deadline' => 'Deadline',
-            'created' => 'Created',
-            'updated' => 'Updated',
-            'status' => 'Status',
+            'title' => 'Заголовок задачи',
+            'description' => 'Подробное описание задачи',
+            'responsible_id' => 'Ответственный',
+            'deadline' => 'Крайний срок',
+            'created' => 'Создана',
+            'updated' => 'Обновлена',
+            'status' => 'Статус',
         ];
     }
 

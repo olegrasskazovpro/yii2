@@ -113,3 +113,44 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.list-view {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.summary {
+    width: 100%;
+}
+
+.tasks-view {
+    margin: 10px;
+    background-color: gainsboro;
+    padding: 10px;
+    border: 1px solid grey;
+}
+
+.tasks-view h1 {
+    font-size: 20px;
+}
+
+.tasks-view h4 {
+    font-size: 14px;
+}
+
+.pagination {
+    width: 100%;
+}
+
+.task-item {
+    display: block;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.task-item div {
+    background-color: #e6e6e6;
+    border: 1px solid grey;
+    padding: 10px;
+}

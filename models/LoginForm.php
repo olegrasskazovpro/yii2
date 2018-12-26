@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use Yii;
+use app\components\Yii;
 use yii\base\Model;
 
 /**
@@ -31,6 +31,7 @@ class LoginForm extends Model
             ['password', 'validatePassword'],
         ];
     }
+
 
     /**
      * Validates the password.

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace app\components;
 
 
 /**
@@ -8,7 +8,7 @@ namespace app\models;
  * @package app\controllers
  * @property \yii\db\Connection $dbUsers The database connection
  */
-abstract class Application extends \yii\base\Application
+class Application extends \yii\web\Application
 {
 
 }

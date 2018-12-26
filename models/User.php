@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\components\Yii;
 use app\models\tables\Users;
 
 class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface

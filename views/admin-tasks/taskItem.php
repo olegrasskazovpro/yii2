@@ -1,0 +1,1 @@
+<tr><th{captionOptions}>{label}</th><td{contentOptions}>{value}</td></tr>
