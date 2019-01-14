@@ -6,6 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\filters\UsersSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $role \app\models\tables\Roles */
 
 $this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
@@ -29,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'login',
             'password',
-            'role_id',
+						'role_id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

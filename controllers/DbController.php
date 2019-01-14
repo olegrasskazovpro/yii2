@@ -2,9 +2,7 @@
 namespace app\controllers;
 
 use app\models\tables\Tasks;
-use app\models\tables\TaskStatus;
 use app\models\tables\Users;
-use yii\db\Query;
 use yii\web\Controller;
 
 class DbController extends Controller
@@ -22,13 +20,18 @@ class DbController extends Controller
 	public function actionAr()
 	{
 		$model = Users::findOne(6);
-		$model->delete();
+		var_dump($model);
+		$model->name = 'Васька';
+		$model->save();
+		$model->errors;
+//		$model->delete();
+		var_dump($model);
 	}
 
 	public function actionFind()
 	{
-		$tasks = Tasks::find()
-		->all();
+		$tasks = Users::find()->with('tasks.taskStatus')
+			->all();
 		var_dump($tasks);
 	}
 }

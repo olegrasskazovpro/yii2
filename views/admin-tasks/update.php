@@ -2,8 +2,12 @@
 
 use yii\helpers\Html;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\tables\Tasks */
+/**
+ * @var $this \yii\web\View
+ * @var $model app\models\tables\Tasks
+ * @var $taskStatusList \app\controllers\AdminTasksController
+ * @var $responsibleList \app\controllers\AdminTasksController
+ */
 
 $this->title = 'Update Tasks: ' . $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Tasks', 'url' => ['index']];
@@ -15,7 +19,9 @@ $this->params['breadcrumbs'][] = 'Update';
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
-        'model' => $model,
+      'model' => $model,
+			'responsibleList' => $responsibleList,
+			'taskStatusList' => $taskStatusList,
     ]) ?>
 
 </div>

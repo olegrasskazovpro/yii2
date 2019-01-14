@@ -24,6 +24,8 @@ class m181226_083828_create_roles_table extends Migration
 
 
 			$this->addColumn('users', 'role_id', 'INT');
+			$this->update('users', ['role_id' => 1], "id = 1");
+			$this->update('users', ['role_id' => 2], "id > 1");
 
 			$this->addForeignKey(
 				'fk_users_role_id',

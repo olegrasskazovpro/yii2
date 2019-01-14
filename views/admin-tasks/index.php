@@ -21,7 +21,8 @@ $this->params['breadcrumbs'][] = $this->title;
 	</p>
 
 	<?=
-	/*GridView::widget([
+
+	GridView::widget([
 		'dataProvider' => $dataProvider,
 		'filterModel' => $searchModel,
 		'columns' => [
@@ -30,13 +31,14 @@ $this->params['breadcrumbs'][] = $this->title;
 			'id',
 			'title',
 			'description:ntext',
-			'responsible_id' => [
+			/*'responsible_id' => [
 				'value' => function ($data) {
-					$name = Users::findOne($data->toArray()['responsible_id']);
-					return $name->name;
+					$user = Users::findOne($data->toArray()['responsible_id']);
+					return $user->name;
 				},
 				'header' => 'Ответственный',
-			],
+			],*/
+			'responsible_id',
 			'deadline',
 			'created',
 			//'updated',
@@ -44,11 +46,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
 			['class' => 'yii\grid\ActionColumn'],
 		],
-	]);*/
+	]);
 
-	\yii\widgets\ListView::widget([
+	/*\yii\widgets\ListView::widget([
 		'dataProvider' => $dataProvider,
 		'itemView' => '/../widgets/views/taskItem.php',
-	]);
+	]);*/
 	?>
 </div>

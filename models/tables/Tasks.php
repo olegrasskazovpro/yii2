@@ -2,8 +2,6 @@
 
 namespace app\models\tables;
 
-use Yii;
-
 /**
  * This is the model class for table "tasks".
  *
@@ -17,6 +15,7 @@ use Yii;
  * @property int $status
  *
  * @property Users $responsible
+ * @property TaskStatus $taskStatus
  */
 class Tasks extends \yii\db\ActiveRecord
 {
@@ -28,7 +27,7 @@ class Tasks extends \yii\db\ActiveRecord
         return 'tasks';
     }
 
-    public function getUser()
+    public function getResponsible()
 		{
 			return $this->hasOne(Users::class, ['id' => 'responsible_id']);
 		}
@@ -70,15 +69,7 @@ class Tasks extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getResponsible()
-    {
-        return $this->hasOne(Users::class, ['id' => 'responsible_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getStatus0()
+    public function getTaskStatus()
     {
         return $this->hasOne(TaskStatus::class, ['id' => 'status']);
     }

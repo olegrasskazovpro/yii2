@@ -154,3 +154,17 @@ a.desc:after {
     border: 1px solid grey;
     padding: 10px;
 }
+
+.task-container {
+    max-width: 250px;
+    padding: 10px;
+    margin: 5px;
+    background-color: #fafafa;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.task-prev-link {
+    text-decoration: none !important;
+    cursor: pointer;
+}

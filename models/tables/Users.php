@@ -13,6 +13,7 @@ namespace app\models\tables;
  *
  * @property Tasks[] $tasks
  * @property Roles[] $roles
+ * @property Users[] $list
  */
 class Users extends \yii\db\ActiveRecord
 {
@@ -74,5 +75,10 @@ class Users extends \yii\db\ActiveRecord
 	public function getRoles()
 	{
 		return $this->hasMany(Roles::class, ['role_id' => 'id']);
+	}
+
+	public static function getList()
+	{
+		return Users::find()->select(['name', 'id'])->indexBy('id')->column();
 	}
 }

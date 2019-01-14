@@ -2,8 +2,6 @@
 
 namespace app\models\tables;
 
-use Yii;
-
 /**
  * This is the model class for table "roles".
  *
@@ -11,6 +9,7 @@ use Yii;
  * @property string $title
  *
  * @property Users[] $users
+ * @property Roles[] $list
  */
 class Roles extends \yii\db\ActiveRecord
 {
@@ -50,4 +49,9 @@ class Roles extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Users::class, ['role_id' => 'id']);
     }
+
+    public static function getList()
+		{
+			return Roles::find()->select(['title', 'id'])->indexBy('id')->column();
+		}
 }
