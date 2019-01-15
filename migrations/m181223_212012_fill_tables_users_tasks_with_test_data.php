@@ -13,19 +13,19 @@ class m181223_212012_fill_tables_users_tasks_with_test_data extends Migration
     public function safeUp()
     {
     	Yii::$app->db->createCommand('ALTER TABLE tasks.users AUTO_INCREMENT=0')->query();
-			$this->batchInsert('users', ['name', 'login', 'password'], [
-				['Oleg', 'admin', 'admin'],
-				['Petr', 'petr', 'petr'],
-				['Olga', 'olga', 'olga'],
-				['Igor', 'igor', 'igor'],
-				['Elena', 'elena', 'elena'],
-				['Vasily', 'vasily', 'vasily'],
-				['Kot', 'kot', 'kot'],
-				['Alex', 'alex', 'alex'],
-				['Evgenii', 'evgenii', 'evgenii'],
-				['Alexey', 'alexey', 'alexey'],
-				['Galina', 'galina', 'galina'],
-				['Artem', 'artem', 'artem'],
+			$this->batchInsert('users', ['name', 'email', 'login', 'password'], [
+				['Oleg', 'user@test.ru', 'admin', 'admin'],
+				['Petr', 'user@test.ru', 'petr', 'petr'],
+				['Olga', 'user@test.ru', 'olga', 'olga'],
+				['Igor', 'user@test.ru', 'igor', 'igor'],
+				['Elena', 'user@test.ru', 'elena', 'elena'],
+				['Vasily', 'user@test.ru', 'vasily', 'vasily'],
+				['Kot', 'user@test.ru', 'kot', 'kot'],
+				['Alex', 'user@test.ru', 'alex', 'alex'],
+				['Evgenii', 'user@test.ru', 'evgenii', 'evgenii'],
+				['Alexey', 'user@test.ru', 'alexey', 'alexey'],
+				['Galina', 'user@test.ru', 'galina', 'galina'],
+				['Artem', 'user@test.ru', 'artem', 'artem'],
 			]);
 
 			Yii::$app->db->createCommand('ALTER TABLE tasks.tasks AUTO_INCREMENT=0')->query();

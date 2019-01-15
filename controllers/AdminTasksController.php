@@ -23,7 +23,7 @@
 		{
 			return [
 				'verbs' => [
-					'class' => VerbFilter::className(),
+					'class' => VerbFilter::class,
 					'actions' => [
 						'delete' => ['POST'],
 					],
@@ -56,6 +56,7 @@
 		 */
 		public function actionView($id)
 		{
+			
 			return $this->render('view', [
 				'model' => $this->findModel($id),
 				'status' => TaskStatus::findOne($this->findModel($id)->status)->title,

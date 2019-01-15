@@ -7,6 +7,7 @@ namespace app\models\tables;
  *
  * @property int $id
  * @property string $name
+ * @property string $email
  * @property string $login
  * @property string $password
  * @property string $role_id
@@ -32,7 +33,7 @@ class Users extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'login', 'password', 'role_id'], 'required'],
-            [['name', 'login', 'password'], 'string', 'max' => 25],
+            [['name', 'email', 'login', 'password'], 'string', 'max' => 25],
             [['role_id'], 'integer'],
         ];
     }
@@ -45,6 +46,7 @@ class Users extends \yii\db\ActiveRecord
         return [
 					'id' => 'ID',
 					'name' => 'Name',
+					'email' => 'E-mail',
 					'login' => 'Login',
 					'password' => 'Password',
 					'role_id' => 'Role ID',
@@ -56,6 +58,7 @@ class Users extends \yii\db\ActiveRecord
 			return [
 				'id',
 				'username' => 'login',
+				'email',
 				'password',
 				'role_id',
 			];

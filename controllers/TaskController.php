@@ -30,8 +30,14 @@ class TaskController extends Controller
 		return $this->render('create', ['model' => $model	, 'list' => Users::getList()]);
 	}
 	
-	public function actionItem($id)
+	public function actionView($id)
 	{
-		var_dump($id);
+		$model = Tasks::findOne($id);
+		
+		return $this->render('item', [
+			'model' => $model,
+			'status' => $model->taskStatus->title,
+			'responsible' => $model->responsible->name,
+		]);
 	}
 }

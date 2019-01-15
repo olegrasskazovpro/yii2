@@ -6,7 +6,7 @@ use yii\helpers\Url;
  */
 ?>
 <div class="task-container">
-	<a class="task-prev-link" href="<?= Url::to(['task/item', 'id' => $model->id]) ?>">
+	<a class="task-prev-link" href="<?= Url::to(['task/view', 'id' => $model->id]) ?>">
 		<div>
 			<h4><?= $model->title ?></h4>
 			<p><?= $model->description ?></p>

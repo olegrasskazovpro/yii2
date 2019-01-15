@@ -7,12 +7,15 @@ $dbusers = require __DIR__ . '/dbusers.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', 'bootstrap'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+    	'bootstrap' => [
+    		'class' => \app\components\Bootstrap::class,
+			],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'ba7GKNe0am1u3v9Fh9AyYw27hGU1SZUG',
