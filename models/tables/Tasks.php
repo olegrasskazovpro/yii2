@@ -4,6 +4,7 @@
 	
 	use yii\behaviors\TimestampBehavior;
 	use yii\db\Expression;
+	use Yii;
 	
 	/**
 	 * This is the model class for table "tasks".
@@ -53,7 +54,8 @@
 				[['title'], 'string', 'max' => 80],
 				[['description'], 'string'],
 				[['responsible_id', 'status'], 'integer'],
-				[['deadline', 'created', 'updated'], 'datetime'],
+				['deadline', 'string'],
+				[['created', 'updated'], 'safe'],
 				[['responsible_id'], 'exist', 'skipOnError' => true, 'targetClass' => Users::class, 'targetAttribute' => ['responsible_id' => 'id']],
 				[['status'], 'exist', 'skipOnError' => true, 'targetClass' => TaskStatus::class, 'targetAttribute' => ['status' => 'id']],
 			];
@@ -66,13 +68,13 @@
 		{
 			return [
 				'id' => 'ID',
-				'title' => 'Заголовок задачи',
-				'description' => 'Подробное описание задачи',
-				'responsible_id' => 'Ответственный',
-				'deadline' => 'Крайний срок',
-				'created' => 'Создана',
-				'updated' => 'Обновлена',
-				'status' => 'Статус',
+				'title' => Yii::t('mainTask', 'title'),
+				'description' => Yii::t('mainTask', 'description'),
+				'responsible_id' => Yii::t('mainTask', 'responsible'),
+				'deadline' => Yii::t('mainTask', 'deadline'),
+				'created' => Yii::t('mainTask', 'created'),
+				'updated' => Yii::t('mainTask', 'updated'),
+				'status' => Yii::t('mainTask', 'status'),
 			];
 		}
 		

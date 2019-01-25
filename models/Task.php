@@ -15,6 +15,7 @@ class Task extends Model
 	public $created;
 	public $updated;
 	public $status;
+	public $month;
 
 	/**
 	 * @return array the validation rules.

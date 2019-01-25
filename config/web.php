@@ -5,14 +5,24 @@ $db = require __DIR__ . '/db.php';
 $dbusers = require __DIR__ . '/dbusers.php';
 
 $config = [
+	'language' => 'ru',
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log', 'bootstrap'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@img'   => '@app/web/img',
     ],
     'components' => [
+    	'i18n' => [
+    		'translations' => [
+    			'main*' => [
+    				'class' => \yii\i18n\PhpMessageSource::class,
+						'basePath' => '@app/messages',
+					],
+				]
+			],
     	'bootstrap' => [
     		'class' => \app\components\Bootstrap::class,
 			],

@@ -2,7 +2,9 @@
 
 namespace app\controllers;
 
-use app\actions\HelloAction;
+use app\models\tables\Tasks;
+use app\models\tables\TaskStatus;
+use app\models\tables\Users;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -54,6 +56,13 @@ class SiteController extends Controller
             ],
         ];
     }
+    
+    public function actionLang($lang)
+		{
+			$session = Yii::$app->session;
+			$session->set('lang', $lang);
+			$this->redirect(Yii::$app->request->referrer);
+		}
 
     /**
      * Displays homepage.
@@ -62,8 +71,37 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+			$model = new Tasks();
+	
+			if ($model->load(Yii::$app->request->post()) && $model->save()) {
+				return $this->redirect(['view', 'id' => $model->id]);
+			}
+			
+			return $this->render('/task/create.php', [
+				'model' => $model	,
+				'userList' => Users::getList(),
+				'statusList' => TaskStatus::getList(),
+				]);
+			//return $this->render('index');
     }
+	
+	/**
+	 * Displays a single Tasks model.
+	 *
+	 * @param integer $id
+	 *
+	 * @return mixed
+	 * @throws NotFoundHttpException if the model cannot be found
+	 */
+	public function actionView($id)
+	{
+		$model = $this->findModel($id);
+		return $this->render('view', [
+			'model' => $model,
+			'status' => TaskStatus::findOne($model->status)->title,
+			'responsible' => Users::findOne($model->responsible_id)->name,
+		]);
+	}
 
     /**
      * Login action.
@@ -126,4 +164,22 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+	
+	/**
+	 * Finds the Tasks model based on its primary key value.
+	 * If the model is not found, a 404 HTTP exception will be thrown.
+	 *
+	 * @param integer $id
+	 *
+	 * @return Tasks the loaded model
+	 * @throws NotFoundHttpException if the model cannot be found
+	 */
+	protected function findModel($id)
+	{
+		if (($model = Tasks::findOne($id)) !== null) {
+			return $model;
+		}
+		
+		throw new NotFoundHttpException('The requested page does not exist.');
+	}
 }

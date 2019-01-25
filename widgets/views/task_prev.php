@@ -6,14 +6,14 @@ use yii\helpers\Url;
  */
 ?>
 <div class="task-container">
-	<a class="task-prev-link" href="<?= Url::to(['task/view', 'id' => $model->id]) ?>">
+	<a class="task-prev-link" href="<?= Url::to(['task/one', 'id' => $model->id]) ?>">
 		<div>
 			<h4><?= $model->title ?></h4>
 			<p><?= $model->description ?></p>
-			<p>Ответственный: <?= $model->responsible->login ?></p>
-			<p>Дедлайн: <?= $model->deadline ?></p>
-			<p>Создана: <?= $model->created ?></p>
-			<p>Статус: <?= $model->taskStatus->title ?></p>
+			<p><?= Yii::t('mainTask', 'responsible') . ': ' . $model->responsible->login ?></p>
+			<p><?= Yii::t('mainTask', 'deadline') . ': ' . $model->deadline ?></p>
+			<p><?= Yii::t('mainTask', 'created') . ': ' . $model->created ?></p>
+			<p><?= Yii::t('mainTask', 'status') . ': ' . $model->taskStatus->title ?></p>
 		</div>
 	</a>
 </div>

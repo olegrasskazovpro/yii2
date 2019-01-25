@@ -2,7 +2,6 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use app\models\tables\Users;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\filters\TasksSearch */
@@ -31,13 +30,6 @@ $this->params['breadcrumbs'][] = $this->title;
 			'id',
 			'title',
 			'description:ntext',
-			/*'responsible_id' => [
-				'value' => function ($data) {
-					$user = Users::findOne($data->toArray()['responsible_id']);
-					return $user->name;
-				},
-				'header' => 'Ответственный',
-			],*/
 			'responsible_id',
 			'deadline',
 			'created',

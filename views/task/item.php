@@ -23,7 +23,7 @@
 		'responsible_id' => [
 			'label' => 'ID ответственного',
 			'value' => $model->responsible_id
-		],
+			],
 		'responsible_name' => [
 			'label' => 'Имя ответственного',
 			'value' => $responsible,

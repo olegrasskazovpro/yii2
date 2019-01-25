@@ -168,3 +168,30 @@ a.desc:after {
     text-decoration: none !important;
     cursor: pointer;
 }
+
+.comment {
+    margin-bottom: 20px;
+}
+
+.comment-container {
+    display: flex;
+}
+
+.comment-container span {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.comment-container p {
+    margin: 0;
+}
+
+.attachment {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.attachments-container {
+    margin: 5px;
+}
