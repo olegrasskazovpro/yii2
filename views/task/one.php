@@ -6,8 +6,8 @@
 	
 	/* @var $this yii\web\View */
 	/* @var $model app\models\tables\Tasks */
-	/* @var $status \app\controllers\AdminTasksController */
-	/* @var $responsible \app\controllers\AdminTasksController */
+	/* @var $status \app\controllers\TasksController */
+	/* @var $responsible \app\controllers\TasksController */
 	
 	$this->title = $model->title;
 	$this->params['breadcrumbs'][] = ['label' => Yii::t('mainNav', 'tasks'), 'url' => ['index']];

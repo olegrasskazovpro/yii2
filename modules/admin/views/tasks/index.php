@@ -39,10 +39,5 @@ $this->params['breadcrumbs'][] = $this->title;
 			['class' => 'yii\grid\ActionColumn'],
 		],
 	]);
-
-	/*\yii\widgets\ListView::widget([
-		'dataProvider' => $dataProvider,
-		'itemView' => '/../widgets/views/taskItem.php',
-	]);*/
 	?>
 </div>

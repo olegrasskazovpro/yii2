@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\tables\Users */
-/* @var $list \app\controllers\AdminUsersController[] */
+/* @var $list \app\controllers\UsersController[] */
 
 $this->title = 'Update Users: ' . $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];

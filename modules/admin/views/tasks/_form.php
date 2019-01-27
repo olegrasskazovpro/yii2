@@ -7,8 +7,8 @@
 	 * @var $this yii\web\View
 	 * @var $model app\models\tables\Tasks
 	 * @var $form yii\widgets\ActiveForm
-	 * @var $responsibleList \app\controllers\AdminTasksController[]
-	 * @var $taskStatusList \app\controllers\AdminTasksController[]
+	 * @var $responsibleList \app\controllers\TasksController[]
+	 * @var $taskStatusList \app\controllers\TasksController[]
 	 */
 	
 ?>

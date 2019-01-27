@@ -1,6 +1,6 @@
 <?php
 	
-	namespace app\controllers;
+	namespace app\modules\admin\controllers;
 	
 	use Yii;
 	use app\models\tables\Users;
@@ -11,9 +11,9 @@
 	use app\models\tables\Roles;
 	
 	/**
-	 * AdminUsersController implements the CRUD actions for Users model.
+	 * UsersController implements the CRUD actions for Users model.
 	 */
-	class AdminUsersController extends Controller
+	class UsersController extends Controller
 	{
 		/**
 		 * {@inheritdoc}

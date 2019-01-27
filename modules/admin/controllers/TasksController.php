@@ -1,6 +1,6 @@
 <?php
 	
-	namespace app\controllers;
+	namespace app\modules\admin\controllers;
 	
 	use app\models\tables\TaskStatus;
 	use app\models\tables\Users;
@@ -14,7 +14,7 @@
 	/**
 	 * AdminTasksController implements the CRUD actions for Tasks model.
 	 */
-	class AdminTasksController extends Controller
+	class TasksController extends Controller
 	{
 		/**
 		 * {@inheritdoc}

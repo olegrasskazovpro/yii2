@@ -2,8 +2,10 @@
 namespace app\models;
 
 
+use app\models\tables\Tasks;
 use app\validators\BadCodeValidator;
 use yii\base\Model;
+use yii\console\ExitCode;
 
 class Task extends Model
 {
@@ -30,5 +32,24 @@ class Task extends Model
 			['description', BadCodeValidator::class, 'message' => 'Описание содержит запрещенный код'],
 			['responsibleId', 'integer', 'message' => 'Тут должен быть ID пользователя'],
 		];
+	}
+	
+	public static function notify(array $tasks)
+	{
+		if (!empty($tasks)){
+			/**
+			 * @var Tasks[] $tasks
+			 */
+			foreach ($tasks as $task){
+				\Yii::$app->mailer->compose()
+					->setTo($task->responsible->email)
+					->setFrom('admin@site.ru')
+					->setSubject("Task id={$task->id} in fire!")
+					->setTextBody("Hello, {$task->responsible->name}. Your task '{$task->title}', id={$task->id} have less than 24 hours to deadline")
+					->send();
+			}
+			return true;
+		}
+		return false;
 	}
 }

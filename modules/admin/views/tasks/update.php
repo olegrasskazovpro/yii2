@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /**
  * @var $this \yii\web\View
  * @var $model app\models\tables\Tasks
- * @var $taskStatusList \app\controllers\AdminTasksController
- * @var $responsibleList \app\controllers\AdminTasksController
+ * @var $taskStatusList \app\controllers\TasksController
+ * @var $responsibleList \app\controllers\TasksController
  */
 
 $this->title = 'Update Tasks: ' . $model->title;
