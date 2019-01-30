@@ -33,6 +33,7 @@ class TaskComments extends \yii\db\ActiveRecord
         return [
             [['task_id', 'user_id'], 'integer'],
             [['comment'], 'string', 'max' => 255],
+            [['comment'], 'required'],
             [['task_id'], 'exist', 'skipOnError' => true, 'targetClass' => Tasks::className(), 'targetAttribute' => ['task_id' => 'id']],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => Users::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];

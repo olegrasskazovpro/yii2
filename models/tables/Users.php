@@ -2,6 +2,8 @@
 
 namespace app\models\tables;
 
+use yii\web\IdentityInterface;
+
 /**
  * This is the model class for table "users".
  *
@@ -16,7 +18,7 @@ namespace app\models\tables;
  * @property Roles[] $roles
  * @property Users[] $list
  */
-class Users extends \yii\db\ActiveRecord
+class Users extends \yii\db\ActiveRecord implements IdentityInterface
 {
     /**
      * {@inheritdoc}
@@ -83,5 +85,27 @@ class Users extends \yii\db\ActiveRecord
 	public static function getList()
 	{
 		return Users::find()->select(['name', 'id'])->indexBy('id')->column();
+	}
+	
+	public static function findIdentity($id)
+	{
+		return static::findOne($id);
+	}
+	
+	public function validateAuthKey($authKey)
+	{
+		return $this->authKey === $authKey;
+	}
+	public function getAuthKey(){
+		return $this->authKey;
+	}
+	public function getId()
+	{
+		return $this->id;
+	}
+	
+	public static function findIdentityByAccessToken($token, $type = null)
+	{
+		return static::findOne(['access_token' => $token]);
 	}
 }

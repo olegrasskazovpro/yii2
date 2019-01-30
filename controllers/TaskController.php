@@ -11,6 +11,7 @@ use app\models\tables\TaskStatus;
 use app\models\tables\Users;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
+use yii\web\ForbiddenHttpException;
 use yii\web\UploadedFile;
 
 class TaskController extends Controller
@@ -115,8 +116,10 @@ class TaskController extends Controller
 		
 		if ($model->load(Yii::$app->request->post()) && $model->save()) {
 			$model->file = UploadedFile::getInstance($model, 'file');
-			$model->upload();
-			Yii::$app->session->setFlash('success', 'Файл сохранен');
+			if(!empty($model->file)){
+				$model->upload();
+				Yii::$app->session->setFlash('success', 'Файл сохранен');
+			}
 		} else {
 			Yii::$app->session->setFlash('error', 'Не удалось сохранить файл');
 		}

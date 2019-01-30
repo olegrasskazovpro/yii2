@@ -18,13 +18,41 @@
 			'admin' => [
 				'class' => 'app\modules\admin\Module',
 			],
+			'rbac' => [
+				'class' => 'yii2mod\rbac\Module',
+				'controllerMap' => [
+					'assignment' => [
+						'class' => 'yii2mod\rbac\controllers\AssignmentController',
+						'userIdentityClass' => \app\models\tables\Users::class, // тут указал класс таблицы пользователей
+						'searchClass' => [
+							'class' => 'yii2mod\rbac\models\search\AssignmentSearch',
+							'pageSize' => 10,
+						],
+						'idField' => 'id',
+						'usernameField' => 'name', // тут указал как у меня в БД называется поле с именем юзера
+						'gridViewColumns' => [
+							'id',
+							'name', // аналогично
+							'email'
+						],
+					],
+				],
+			],
 		],
 		'components' => [
+			'authManager' => [
+				'class' => 'yii\rbac\DbManager',
+				'defaultRoles' => ['guest', 'user'],
+			],
 			'i18n' => [
 				'translations' => [
 					'main*' => [
 						'class' => \yii\i18n\PhpMessageSource::class,
 						'basePath' => '@app/messages',
+					],
+					'yii2mod.rbac' => [
+						'class' => 'yii\i18n\PhpMessageSource',
+						'basePath' => '@yii2mod/rbac/messages',
 					],
 				]
 			],

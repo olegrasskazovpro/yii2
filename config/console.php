@@ -13,7 +13,12 @@
 			'@npm' => '@vendor/npm-asset',
 			'@tests' => '@app/tests',
 		],
+		'modules' => [
+		],
 		'components' => [
+			'authManager' => [
+				'class' => \yii\rbac\DbManager::class
+			],
 			'cache' => [
 				'class' => 'yii\caching\FileCache',
 			],

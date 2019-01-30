@@ -7,6 +7,7 @@
 	use Yii;
 	use app\models\tables\Tasks;
 	use app\models\filters\TasksSearch;
+	use yii\filters\AccessControl;
 	use yii\web\Controller;
 	use yii\web\NotFoundHttpException;
 	use yii\filters\VerbFilter;

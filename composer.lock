@@ -4,8 +4,66 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f02085e733f6474fc78c12a930a5da7c",
+    "content-hash": "f058dddac929709ae416df5616554ed5",
     "packages": [
+        {
+            "name": "2amigos/yii2-arrayquery-component",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/2amigos/yii2-arrayquery-component.git",
+                "reference": "7bbcc4eb868ff30587768999e436d14b7979fec6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/2amigos/yii2-arrayquery-component/zipball/7bbcc4eb868ff30587768999e436d14b7979fec6",
+                "reference": "7bbcc4eb868ff30587768999e436d14b7979fec6",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.11"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "phpunit/phpunit": "~5.6",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "dosamigos\\arrayquery\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "2amigOS! Consulting Group",
+                    "email": "hola@2amigos.us",
+                    "homepage": "http://2amigos.us",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Yii2 component that allows for searching/filtering the elements of an array.",
+            "homepage": "http://yiiwheels.com/extension/arrayquery-component",
+            "keywords": [
+                "2amigos",
+                "arrayquery",
+                "component",
+                "extension",
+                "yii",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2017-07-05T14:40:16+00:00"
+        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.3.7",
@@ -63,6 +121,28 @@
                 "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/77d2a51d0520d2ee44173afdf4e40a9201f5964e",
                 "reference": "77d2a51d0520d2ee44173afdf4e40a9201f5964e",
                 "shasum": null
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/jquery-ui",
+            "version": "1.12.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jqueryui.git",
+                "reference": "44ecf3794cc56b65954cc19737234a3119d036cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jqueryui/zipball/44ecf3794cc56b65954cc19737234a3119d036cc",
+                "reference": "44ecf3794cc56b65954cc19737234a3119d036cc",
+                "shasum": null
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.6"
             },
             "type": "bower-asset",
             "license": [
@@ -166,6 +246,59 @@
                 "markdown-extra"
             ],
             "time": "2018-12-10T09:41:35+00:00"
+        },
+        {
+            "name": "dektrium/yii2-rbac",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dektrium/yii2-rbac.git",
+                "reference": "a53c498847103ab1904699219b8d67c0ab63f000"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dektrium/yii2-rbac/zipball/a53c498847103ab1904699219b8d67c0ab63f000",
+                "reference": "a53c498847103ab1904699219b8d67c0ab63f000",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-widget-select2": "^2.0",
+                "yiisoft/yii2": "^2.0.8"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "bootstrap": "dektrium\\rbac\\Bootstrap",
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "dektrium\\rbac\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Erofeev",
+                    "email": "dmeroff@gmail.com",
+                    "homepage": "http://dmeroff.ru"
+                }
+            ],
+            "description": "RBAC management module for Yii2",
+            "keywords": [
+                "dektrium",
+                "rbac gui",
+                "rbac management",
+                "rbac module",
+                "yii rbac",
+                "yii2",
+                "yii2-rbac"
+            ],
+            "time": "2018-10-31T02:08:49+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -379,6 +512,59 @@
             "time": "2018-11-05T12:32:51+00:00"
         },
         {
+            "name": "kartik-v/yii2-widget-select2",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kartik-v/yii2-widget-select2.git",
+                "reference": "dd09e46e618cf1c67a39fac9f38d97a95184fe8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kartik-v/yii2-widget-select2/zipball/dd09e46e618cf1c67a39fac9f38d97a95184fe8a",
+                "reference": "dd09e46e618cf1c67a39fac9f38d97a95184fe8a",
+                "shasum": ""
+            },
+            "require": {
+                "kartik-v/yii2-krajee-base": ">=1.9"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "kartik\\select2\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kartik Visweswaran",
+                    "email": "kartikv2@gmail.com",
+                    "homepage": "http://www.krajee.com/"
+                }
+            ],
+            "description": "Enhanced Yii2 wrapper for the Select2 jQuery plugin (sub repo split from yii2-widgets).",
+            "homepage": "https://github.com/kartik-v/yii2-widget-select2",
+            "keywords": [
+                "dropdown",
+                "extension",
+                "form",
+                "jquery",
+                "plugin",
+                "select2",
+                "widget",
+                "yii2"
+            ],
+            "time": "2018-12-11T10:34:32+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "5.x-dev",
             "source": {
@@ -431,6 +617,61 @@
                 "mailer"
             ],
             "time": "2018-07-31T09:26:32+00:00"
+        },
+        {
+            "name": "yii2mod/yii2-rbac",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yii2mod/yii2-rbac.git",
+                "reference": "6b98a04fc75bc82ccf87001959f496b283266a40"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yii2mod/yii2-rbac/zipball/6b98a04fc75bc82ccf87001959f496b283266a40",
+                "reference": "6b98a04fc75bc82ccf87001959f496b283266a40",
+                "shasum": ""
+            },
+            "require": {
+                "2amigos/yii2-arrayquery-component": "~1.0",
+                "php": ">=7.0.0",
+                "yiisoft/yii2": "~2.0.13",
+                "yiisoft/yii2-jui": "~2.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~2.0",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yii2mod\\rbac\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Semenov",
+                    "email": "disemx@gmail.com"
+                },
+                {
+                    "name": "Igor Chepurnoi",
+                    "email": "chepurnoi.igor@gmail.com"
+                }
+            ],
+            "description": "RBAC management module for Yii2",
+            "keywords": [
+                "rbac gui",
+                "rbac management",
+                "rbac module",
+                "yii2",
+                "yii2 rbac",
+                "yii2-rbac"
+            ],
+            "time": "2018-07-18T11:23:34+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -693,6 +934,64 @@
                 "yii2"
             ],
             "time": "2018-02-22T11:57:06+00:00"
+        },
+        {
+            "name": "yiisoft/yii2-jui",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yiisoft/yii2-jui.git",
+                "reference": "8195a03e1a0bf64fe1df20b8993b6c7bad0e1b10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-jui/zipball/8195a03e1a0bf64fe1df20b8993b6c7bad0e1b10",
+                "reference": "8195a03e1a0bf64fe1df20b8993b6c7bad0e1b10",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery-ui": "~1.12.1",
+                "yiisoft/yii2": "~2.0.4"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\jui\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Kochetov",
+                    "email": "creocoder@gmail.com"
+                },
+                {
+                    "name": "Qiang Xue",
+                    "email": "qiang.xue@gmail.com"
+                },
+                {
+                    "name": "Carsten Brandt",
+                    "email": "mail@cebe.cc"
+                },
+                {
+                    "name": "Alexander Makarov",
+                    "email": "sam@rmcreative.ru"
+                }
+            ],
+            "description": "The Jquery UI extension for the Yii framework",
+            "keywords": [
+                "jQuery UI",
+                "yii2"
+            ],
+            "time": "2018-09-18T13:26:35+00:00"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
@@ -3468,7 +3767,10 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "kartik-v/yii2-widget-datetimepicker": 20,
-        "yiisoft/yii2-imagine": 20
+        "yiisoft/yii2-imagine": 20,
+        "yiisoft/yii2-jui": 20,
+        "dektrium/yii2-rbac": 20,
+        "yii2mod/yii2-rbac": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
